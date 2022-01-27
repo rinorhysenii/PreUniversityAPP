@@ -5,11 +5,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain
+namespace Domain.Entities
 {
     public class AppUser : IdentityUser
     {
         public string DisplayName { get; set; }
+
         public string Bio { get; set; }
+
+        public Guid ParentId { get; set; }
+
+        public virtual Parent Parent { get; set; }
+
     }
 }
