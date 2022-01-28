@@ -1,14 +1,14 @@
 #home{
-    color: rgb(92, 168, 179);
+    color: rgb(177, 245, 255);
     font-size: 19px;
     margin-left: 20px;
 }
 #shkolla{
-    color: rgb(72, 159, 170);
+    color: rgb(163, 235, 245);
     font-size: 24px;
     font-weight: 600;
 }
 .navbar{
-    background-image: linear-gradient(to right, rgb(170, 250, 230), rgb(179, 232, 255));
+    background-image: linear-gradient(to right, rgb(69, 103, 153), rgb(47, 125, 156));
    border-bottom: solid 2px rgb(70, 193, 241);
 }

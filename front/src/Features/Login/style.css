@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato', sans-serif;
+}
+
+
+.home,
+.reports,
+.products {
+  display: flex;
+  height: 90vh;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+}
+body{
+  background-color:rgb(243, 243, 243);
+}
+.react-datepicker-wrapper{
+  width: 100%;
+}
+
+/*home page styles*/
+
+.masthead {
+  display: flex;
+  align-items: center;
+  background-image: linear-gradient(
+          135deg,
+          rgba(109, 146, 177, 0.842) 0%,
+          rgb(21, 97, 122) 69%,
+          rgb(0, 117, 121) 89%
+  ) !important;
+  height: 100vh;
+}
+.forma{
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+button, input {
+  overflow: visible;
+  margin: 0 auto;
+      border: auto;
+      border-radius: 10px;
+      color: #fff;
+      background-color:rgba(194, 217, 224, 0.726);
+}
+.masthead:hover{
+ background-image: url("bg.jpg") ,linear-gradient(
+  135deg,
+  rgb(212, 8, 8) 0%,
+  rgb(165, 19, 19) 69%,
+  rgb(0, 0, 0) 89%
+)!important;
+ background-repeat: no-repeat!important;
+
+ transition: 2s !important;
+ opacity: 0.80;
+}
+.aaad{
+width: 2222px;
+}
+
+
+.masthead .ui.menu .ui.button,
+.ui.menu a.ui.inverted.button {
+
+  margin-left: 0.5em;
+}
+
+.masthead h1.ui.header {
+  font-size: 4em;
+  font-weight: normal;
+  
+}
+
+.masthead h2 {
+  font-size: 1.7em;
+  font-weight: normal;
+}
+
+
+.ui.inverted.button {
+    box-shadow: 0 0 0 2px #fff inset!important;
+    background: transparent none;
+    color: #fff;
+    text-shadow: none!important;
+    margin-left: 10px;
+}
+.ui.huge.button, .ui.huge.buttons .button, .ui.huge.buttons .or {
+    font-size: 1.42857143rem;
+}
+.ui.inverted.button {
+    box-shadow: 0 0 0 2px #fff inset!important;
+    background: transparent none;
+    color: #fff;
+    text-shadow: none!important;
+}
+.ui.huge.button, .ui.huge.buttons .button, .ui.huge.buttons .or {
+    font-size: 1.42857143rem;
+}
+.ui.inverted.button {
+    -webkit-box-shadow: 0 0 0 2px #fff inset!important;
+    box-shadow: 0 0 0 2px #fff inset!important;
+    background: transparent none;
+    color: #fff;
+    text-shadow: none!important;
+}
+.ui.button, .ui.buttons .button, .ui.buttons .or {
+    font-size: 1rem;
+}
+.kkk{
+  display: flex;
+  justify-content: center;
+  font-size: 13px;
+
+}
+.logoja{
+  display: flex;
+  justify-content: center;
+}
+.logo{
+  animation-name: fadeInOut, moveLeft800px, bounce;
+animation-duration: 3s;
+animation-iteration-count: 1;
+width: 100px;
+}
+.asas{
+  color:#fff;
+  text-align: center;
+}
+@keyframes asas {
+  0% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1.5, 1.5);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+.ui.text.container {
+  font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+  max-width: 2000px!important;
+  margin-bottom: 180px;
+}
+p{
+  overflow: hidden;
+  position: relative;
+  white-space : nowrap;
+  -webkit-text-stroke: 2.4px rgb(14, 182, 224);
+  color: rgb(22, 99, 99);
+ 
+  text-transform:uppercase ;
+
+}
+
+p::before{
+  content: attr(data-text);
+  position: absolute; 
+ 
+  color: aqua;
+  border-right:3px solid rgb(0, 194, 58) ;
+  overflow: hidden;
+  white-space : nowrap;
+  animation: animate 6s linear infinite;
+}
+@keyframes animate{
+  0%, 10%, 100%
+  {
+    width: 0;
+  }
+  70%,90%{
+    width: 1030px;
+  }
+}
+.ui.inverted.button {
+  box-shadow: 0 0 0 2px #fff inset!important;
+  background: transparent none;
+  color: #fff;
+  text-shadow: none!important;
+  margin-left: 10px;
+  margin-top: 32px;
+}
+
+.ui.dropdown>.text {
+  color:black;/* u kan white  e kom ndryshu black per arsyje me u shfaq selektimi ne drop down*/
+}
+
+.ui.dropdown>.dropdown.icon:before {
+  color: white;
+}   
