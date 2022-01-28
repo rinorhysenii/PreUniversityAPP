@@ -10,5 +10,6 @@ namespace Application.Interfaces
     public interface ITeacherRepository
     {
         Task<StudentCourse> AddMark(Guid courseId, Guid studentId, int mark);
+        Task<List<Teacher>> GetAllTeachers();
     }
 }
