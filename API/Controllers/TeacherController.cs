@@ -21,7 +21,7 @@ namespace API.Controllers
             var result = await teacherReporsitory.GetAllTeachers();
             return Ok(result);
         }
-        [HttpPut]
-        public async Task<IActionResult
+        //[HttpPut]
+       // public async Task<IActionResult>
     }
 }
