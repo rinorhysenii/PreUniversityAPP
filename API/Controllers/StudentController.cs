@@ -27,31 +27,32 @@ namespace API.Controllers
 
 
         }
-        //[HttpGet]
-        //public async Task<IActionResult> getStudentById(Guid Id)
-        //{
-        //    var student = _studentRepository.getStudentbyId(Id);
-        //    return Ok(student);
+        [HttpGet("id")]
+        public async Task<IActionResult> getStudentById(Guid Id)
+        {
+            var student = _studentRepository.getStudentbyId(Id);
+            return Ok(student);
 
-        //}
-        //    [HttpGet]
-        //    public async Task<IActionResult> getAllCoursesForStudent(Guid Id)
-        //    {
-        //        var courses = _studentRepository.getAllCourses(Id);
-        //        return Ok(courses);
+        }
+        [HttpGet("/allcourses")]
+        public async Task<IActionResult> getAllCoursesForStudent(Guid Id)
+        {
+            var courses = _studentRepository.getAllCourses(Id);
+            return Ok(courses);
 
-        //    }
-        //    [HttpGet]
-        //    public async Task<IActionResult> getAverageForStudent(Guid Id)
-        //    {
-        //        var average = _studentRepository.getAverage(Id);
-        //        return Ok(average);
-        //    }
-        //    public async Task<IActionResult> getTranskript(Guid Id)
-        //    {
-        //        var transcript = _studentRepository.getTranskripten(Id);
-        //        return Ok(transcript);
-        //    }
+        }
+        [HttpGet("/average")]
+        public async Task<IActionResult> getAverageForStudent(Guid Id)
+        {
+            var average = _studentRepository.getAverage(Id);
+            return Ok(average);
+        }
+        [HttpGet("/transript")]
+        public async Task<IActionResult> getTranskript(Guid Id)
+        {
+            var transcript = _studentRepository.getTranskripten(Id);
+            return Ok(transcript);
+        }
 
 
         //}
