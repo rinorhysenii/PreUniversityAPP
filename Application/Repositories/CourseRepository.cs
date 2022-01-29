@@ -55,7 +55,7 @@ namespace Application.Repositories
                 IsMarked = true
             };
 
-            var result = await context.AddAsync(studentCourse);
+            var result = await context.StudentCourses.AddAsync(studentCourse);
             await context.SaveChangesAsync();
 
             return studentCourse;

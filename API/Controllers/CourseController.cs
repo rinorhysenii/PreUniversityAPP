@@ -34,7 +34,8 @@ namespace API.Controllers
             var result = await courseReporsitory.GetMark(courseId,studentId);
             return Ok(result);
         }
-        [HttpPost]
+
+        [HttpPost("addMark")]
         public async Task<IActionResult> AddMark(Guid courseId,Guid studentId, int mark)
         {
             var result = await courseReporsitory.AddMark(courseId, studentId, mark);
