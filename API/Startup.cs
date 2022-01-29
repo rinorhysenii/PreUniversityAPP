@@ -42,6 +42,7 @@ namespace API
             });
             services.AddScoped<ITeacherRepository, TeacherRepository>();
             services.AddScoped<IStudentRepository, StudentRepository>();
+            services.AddScoped<ICourseRepository, CourseRepository>();
             services.AddScoped<IParentRepository, ParentRepository>();
             //services.AddScoped<IAccountRepository, AccountRepository>();
         }

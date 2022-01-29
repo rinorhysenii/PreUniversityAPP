@@ -15,13 +15,12 @@ namespace API.Controllers
         {
             this.teacherReporsitory = teacherReporsitory;
         }
-        [HttpGet]
+
+        [HttpGet("getAllTeachers")]
         public async Task<IActionResult> GetAllTeachers()
         {
             var result = await teacherReporsitory.GetAllTeachers();
             return Ok(result);
         }
-        //[HttpPut]
-       // public async Task<IActionResult>
     }
 }
