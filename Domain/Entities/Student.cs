@@ -10,6 +10,8 @@ namespace Domain.Entities
     {
         public Guid Id { get; set; }
 
+        public string Name { get; set; }
+
         public string StudentNumber { get; set; }
 
         public string RoleId { get; set; }
