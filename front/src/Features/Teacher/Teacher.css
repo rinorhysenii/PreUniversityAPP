@@ -1,7 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap');
+
+.list-group-flush>.list-group-item {
+    font-family: 'Poppins', sans-serif;
+}
 .lista{
+    
+    position: relative;
     width: 1000px;
     margin-top: 20px;
     margin-left: 20px;
+   
+}
+.lista1{
+    position: relative;
 }
 .bttn{
     float: right;
@@ -10,3 +21,17 @@
     border: solid 1px white;
     border-radius: 0%;
 }
+.App .openModalBtn {
+    width: 200px;
+    height: 40px;
+    border: none;
+    border-radius: 6px;
+    background-color: cornflowerblue;
+    color: white;
+    cursor: pointer;
+  }
+  body {
+    padding: 0;
+    margin: 0;
+  }
+  

@@ -8,6 +8,7 @@ import { Container } from 'semantic-ui-react';
 
 
 
+
 function App() {
   return (
     <>
@@ -16,7 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={<LoginPage/>}/>
           <Route path="/Teacher" element={<TeacherPage/>}/>
-
+        
         </Routes>
 
      </Router>
