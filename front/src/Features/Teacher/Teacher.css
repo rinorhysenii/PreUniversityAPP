@@ -1,0 +1,12 @@
+.lista{
+    width: 1000px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.bttn{
+    float: right;
+    width: 90px;
+    background-color: rgb(38, 209, 52);
+    border: solid 1px white;
+    border-radius: 0%;
+}
