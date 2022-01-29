@@ -28,5 +28,29 @@ namespace API.Controllers
             var result = await courseReporsitory.GetCourse(courseId);
             return Ok(result);
         }
+        [HttpGet("getMark/{studentId}")]
+        public async Task<IActionResult> GetMark(Guid courseId, Guid studentId)
+        {
+            var result = await courseReporsitory.GetMark(courseId,studentId);
+            return Ok(result);
+        }
+        [HttpPost]
+        public async Task<IActionResult> AddMark(Guid courseId,Guid studentId, int mark)
+        {
+            var result = await courseReporsitory.AddMark(courseId, studentId, mark);
+            return Ok(result);
+        }
+        [HttpPut]
+        public async Task<IActionResult> EditMark(Guid courseId, Guid studentId, int mark)
+        {
+            var result = await courseReporsitory.EditMark(courseId,studentId,mark);
+            return Ok(result);
+        }
+        [HttpDelete]
+        public async Task<IActionResult> DeleteMark(Guid courseId, Guid studentId)
+        {
+            var result = await courseReporsitory.DeleteMark(courseId, studentId);
+            return Ok(result);
+        }
     }
 }
