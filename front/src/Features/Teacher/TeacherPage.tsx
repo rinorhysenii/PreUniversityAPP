@@ -17,7 +17,7 @@ function TeacherPage(){
                 <li className="list-group-item">Emri Mbiemri <button className="bttn"> Shiko</button> </li>
 
             </ul>
-           <Popup><h1>cxcxcxcx</h1></Popup>
+         
         </div>
     )
 }
