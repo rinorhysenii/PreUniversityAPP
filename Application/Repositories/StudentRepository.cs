@@ -39,7 +39,7 @@ namespace Application.Repositories
 
         public async Task<List<Student>> getAllStudents()
         {
-            List<Student> students= await  _context.Students.Include(x=> x.Parent).ToListAsync();
+            List<Student> students= await  _context.Students.ToListAsync();
             if (students == null)
             {
                 throw new RestException(HttpStatusCode.BadRequest, "There are no courses!");
