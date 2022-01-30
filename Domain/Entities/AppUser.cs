@@ -13,9 +13,5 @@ namespace Domain.Entities
 
         public string Bio { get; set; }
 
-        public Guid ParentId { get; set; }
-
-        public virtual Parent Parent { get; set; }
-
     }
 }

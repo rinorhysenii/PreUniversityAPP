@@ -9,8 +9,8 @@ namespace Application.Interfaces
 {
     public interface IParentRepository
     {
-        Task<List<Student>> getMyChildren(Guid parentid);
-        Task<List<StudentCourse>> getTranskciptForMyChild(Guid studentid);
-        decimal getAvgForMyChild(Guid stId);
+        Task<List<Student>> GetMyChildren(Guid parentid);
+        Task<List<StudentCourse>> GetTranskciptForMyChild(Guid studentid);
+        decimal GetAvgForMyChild(Guid stId); 
     }
 }
