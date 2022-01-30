@@ -18,9 +18,9 @@ export default class StudentatStore{
     }
     loadStudentat= async ()=>{
        try{
-        const terminat=await agent.Teachers.list();
+        const students=await agent.Teachers.list();
         runInAction(()=>{
-            terminat.forEach(studenti=>{
+            students.forEach(studenti=>{
                
                 this.StudentatRegistry.set(studenti.id,studenti);
         })
