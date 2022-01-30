@@ -2,7 +2,7 @@ import axios, { AxiosResponse } from 'axios';
 import { IStudentat } from '../intefaces/IStudentat';
 import { ITeacher } from '../intefaces/ITeacher';
 
-axios.defaults.baseURL = 'http://localhost:44375';
+axios.defaults.baseURL = 'https://localhost:44375';
 
 const responseBody = <T> (response: AxiosResponse <T> ) => response.data;
 
@@ -23,7 +23,7 @@ const Students={
 }
 
 const Teachers={
-    list: () => requests.get<ITeacher[]>('/Teacher'),
+    list: () => requests.get<ITeacher[]>('/Teacher/getAllTeachers'),
     details: (id: string) => requests.get<IStudentat>(`/Teacher/${id}`),
 
 }
