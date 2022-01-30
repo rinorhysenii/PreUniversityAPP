@@ -17,8 +17,8 @@ const Background = styled.div`
 `;
 
 const ModalWrapper = styled.div`
-  width: 1000px;
-  height: 600px;
+  width: 500px;
+  height: 300px;
   box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
   background: #fff;
   color: #000;
@@ -35,14 +35,13 @@ const ModalContent = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items:center;
+  
   line-height: 1.8;
+  margin-left:10px;
+  margin-top:20px;
+  margin-right:10px;
 
-  button {
-    padding: 10px 24px;
-    background: #141414;
-    color: #fff;
-    border: none;
-  }
+  
 `;
 
 const CloseModalButton = styled(MdClose)`
@@ -98,8 +97,21 @@ const Modal = ({showModal,setShowModal}) =>{
               <ModalWrapper showModal={showModal}>
               
                 <ModalContent>
-                 <li className="list-group-item"><h3>Emri Mbiemri</h3> </li> 
+                    <br/>
+                <div className='bordeer'><h5>Emri Mbiemri</h5> <h5>Nota :</h5></div> 
                 </ModalContent>
+                <ModalContent>
+                 <h6>Shtyp noten</h6> 
+                 <h7>(Kujdes nota e vendosur te jete valide)</h7>
+                </ModalContent>
+                <ModalContent>
+
+                 <div class="wrapper">
+                    <input class="search" type="text" id="search" />
+                    <input class="submit" type="submit" value=" " />
+                </div>
+                </ModalContent>
+                
                 <CloseModalButton
                   aria-label='Close modal'
                   onClick={() => setShowModal(prev => !prev)}

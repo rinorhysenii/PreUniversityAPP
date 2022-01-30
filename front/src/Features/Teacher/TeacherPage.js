@@ -19,8 +19,9 @@ function TeacherPage(){
 
     const Container = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: center;
+  margin-left:80;
+  margin-top:50;
+
   height: 100vh;
 `;
 

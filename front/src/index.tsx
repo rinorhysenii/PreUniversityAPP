@@ -3,11 +3,14 @@ import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { store, StoreContext, StoreContextStudentat } from './Stores/Store';
+import StudentatStore from './Stores/StudentatStore';
 
 ReactDOM.render(
-  <React.StrictMode>
+  <StoreContextStudentat.Provider value={store}>
+  
     <App />
-  </React.StrictMode>,
+    </StoreContextStudentat.Provider>,
   document.getElementById('root')
 );
 

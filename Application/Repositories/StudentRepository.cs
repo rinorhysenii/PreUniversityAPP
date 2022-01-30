@@ -20,9 +20,9 @@ namespace Application.Repositories
             _context = context;
         }
 
-        public async Task<List<Course>> getAllCourses(Guid id)
+        public async Task<List<Course>> GetAllCourses(Guid id)
         {
-            var coursesEnrollment = _context.StudentCourses.Where(x => x.StudentId == id).ToList();
+            var coursesEnrollment = await _context.StudentCourses.Where(x => x.StudentId == id).ToListAsync();
             List<Course> course = new List<Course>();
             foreach(var item in coursesEnrollment)
             {
@@ -37,7 +37,7 @@ namespace Application.Repositories
            
         }
 
-        public async Task<List<Student>> getAllStudents()
+        public async Task<List<Student>> GetAllStudents()
         {
             List<Student> students= await  _context.Students.ToListAsync();
             if (students == null)
@@ -47,7 +47,7 @@ namespace Application.Repositories
             return students;
         }
 
-        public decimal getAverage(Guid id)
+        public decimal GetAverage(Guid id)
         {
             int Courses = 0;
             int sumOfMarks = 0;
@@ -64,9 +64,7 @@ namespace Application.Repositories
 
         }
 
-       
-
-        public Student getStudentbyId(Guid id)
+        public Student GetStudentbyId(Guid id)
         {
             var student = _context.Students.Where(x => x.Id == id).FirstOrDefault();
             if (student == null)
@@ -76,7 +74,7 @@ namespace Application.Repositories
             return student;
         }
 
-        public async Task<List<StudentCourse>> getTranskripten(Guid Id)
+        public async Task<List<StudentCourse>> GetTranskripten(Guid Id) 
         {
             var transkript = await _context.StudentCourses.Where(x => x.StudentId == Id).Include(x => x.Student).Include(x => x.Course).ToListAsync();
 

@@ -104,13 +104,13 @@ namespace Persistence
             modelBuilder.Entity<StudentGroup>(entity =>
             {
                 entity.HasKey(e => e.Id)
-                    .HasName("PK__Group__Id");
+                    .HasName("PK__StudentGroup__Id");
             });
 
             modelBuilder.Entity<StudentCourse>(entity =>
             {
                 entity.HasKey(e => e.Id)
-                    .HasName("PK__Group__Id");
+                    .HasName("PK__StudentCourse__Id");
             });
 
             modelBuilder.Entity<StudentGroup>()
@@ -123,7 +123,7 @@ namespace Persistence
             .HasOne(p => p.Student)
             .WithMany()
             .HasForeignKey(p => p.StudentId)
-            .HasConstraintName("FK_Student_StudentId");
+            .HasConstraintName("FK_StudentGroup_StudentId");
 
             modelBuilder.Entity<StudentCourse>()
             .HasOne(p => p.Course)
@@ -135,7 +135,7 @@ namespace Persistence
             .HasOne(p => p.Student)
             .WithMany()
             .HasForeignKey(p => p.StudentId)
-            .HasConstraintName("FK_Student_StudentId");
+            .HasConstraintName("FK_StudentCourse_StudentId");
 
             base.OnModelCreating(modelBuilder);
 

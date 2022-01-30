@@ -74,6 +74,7 @@ namespace Application.Repositories
         {
             var studentCourse = await context.StudentCourses.Where(x => x.StudentId == studentId && x.CourseId == courseId).FirstOrDefaultAsync();
             studentCourse.Mark = 0;
+            studentCourse.IsMarked = false;
             context.StudentCourses.Update(studentCourse);
             await context.SaveChangesAsync();
             return studentCourse;
