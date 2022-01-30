@@ -11,7 +11,7 @@ function LoginPage(){
             
              <div className='kkk'>
             <Header as='h1' inverted > 
-                <p data-text="School Management System"> School  Management  System</p>  
+                <p data-text="School Management System"> School Management System</p>  
             </Header>
             </div>
 
@@ -23,16 +23,14 @@ function LoginPage(){
                     <Header as='h2'  className='asas' inverted content='Welcome to Hospital Management System' />
 
                     <div className='forma'>
-                        <Input icon className='inputat' placeholder='Email'>
-                        <input />
-                        <Icon name='search' />
-                        </Input>
-                        <br />
-                        <br />
-                        <Input iconPosition='left' className='inputat' placeholder='Password'>
-                        <Icon name='at' />
-                        <input />
-                        </Input>
+                        <div className="wrapper">
+                        <input className="search" type="text" id="search" />
+                      
+                    </div>
+                    <div className="wrapper">
+                        <input className="search" type="text" id="search" />
+                        <input className="submit" type="submit" value=" " />
+                    </div>
                     </div>
                 </>
             

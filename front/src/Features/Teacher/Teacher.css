@@ -20,6 +20,7 @@
     background-color: rgb(38, 209, 52);
     border: solid 1px white;
     border-radius: 0%;
+    color: white;
 }
 .App .openModalBtn {
     width: 200px;
