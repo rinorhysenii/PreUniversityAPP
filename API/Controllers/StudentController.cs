@@ -34,20 +34,20 @@ namespace API.Controllers
             return Ok(student);
 
         }
-        [HttpGet("/allcourses")]
+        [HttpGet("/allcourses/{id}")]
         public async Task<IActionResult> GetAllCoursesForStudent(Guid Id)
         {
             var courses = _studentRepository.GetAllCourses(Id);
             return Ok(courses);
 
         }
-        [HttpGet("/average")]
+        [HttpGet("/average/{id}")]
         public async Task<IActionResult> GetAverageForStudent(Guid Id)
         {
             var average = _studentRepository.GetAverage(Id);
             return Ok(average);
         }
-        [HttpGet("/transript")]
+        [HttpGet("/transript/{id}")]
         public async Task<IActionResult> GetTranskript(Guid Id)
         {
             var transcript = _studentRepository.GetTranskripten(Id);

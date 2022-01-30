@@ -47,7 +47,7 @@ namespace API.Controllers
             
 
         }
-        [HttpPost("/logout")]
+        [HttpGet("/logout")]
 
         public async Task<IActionResult> Logout()
         {

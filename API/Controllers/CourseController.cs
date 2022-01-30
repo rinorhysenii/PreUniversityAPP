@@ -1,4 +1,5 @@
 ﻿using Application.Interfaces;
+using Application.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -28,7 +29,7 @@ namespace API.Controllers
             var result = await courseReporsitory.GetCourse(courseId);
             return Ok(result);
         }
-        [HttpGet("getMark/{studentId}")]
+        [HttpGet("getMark/{courseId}/{studentId}")]
         public async Task<IActionResult> GetMark(Guid courseId, Guid studentId)
         {
             var result = await courseReporsitory.GetMark(courseId,studentId);
@@ -36,21 +37,21 @@ namespace API.Controllers
         }
 
         [HttpPost("addMark")]
-        public async Task<IActionResult> AddMark(Guid courseId,Guid studentId, int mark)
+        public async Task<IActionResult> AddMark(MarksViewModel mark)
         {
-            var result = await courseReporsitory.AddMark(courseId, studentId, mark);
+            var result = await courseReporsitory.AddMark(mark.courseId, mark.studentId, mark.mark);
             return Ok(result);
         }
         [HttpPut]
-        public async Task<IActionResult> EditMark(Guid courseId, Guid studentId, int mark)
+        public async Task<IActionResult> EditMark(MarksViewModel mark)
         {
-            var result = await courseReporsitory.EditMark(courseId,studentId,mark);
+            var result = await courseReporsitory.EditMark(mark.courseId,mark.studentId,mark.mark);
             return Ok(result);
         }
         [HttpDelete]
-        public async Task<IActionResult> DeleteMark(Guid courseId, Guid studentId)
+        public async Task<IActionResult> DeleteMark(DeleteMarkViewModel del)
         {
-            var result = await courseReporsitory.DeleteMark(courseId, studentId);
+            var result = await courseReporsitory.DeleteMark(del.courseId, del.studentId);
             return Ok(result);
         }
     }
