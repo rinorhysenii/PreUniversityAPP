@@ -20,37 +20,37 @@ namespace API.Controllers
 
         [HttpGet]
 
-        public async Task<IActionResult> getAllStudents()
+        public async Task<IActionResult> GetAllStudents()
         {
-            var resault = await _studentRepository.getAllStudents();
+            var resault = await _studentRepository.GetAllStudents();
             return Ok(resault);
 
 
         }
         [HttpGet("id")]
-        public async Task<IActionResult> getStudentById(Guid Id)
+        public async Task<IActionResult> GetStudentById(Guid Id)
         {
-            var student = _studentRepository.getStudentbyId(Id);
+            var student = _studentRepository.GetStudentbyId(Id);
             return Ok(student);
 
         }
         [HttpGet("/allcourses")]
-        public async Task<IActionResult> getAllCoursesForStudent(Guid Id)
+        public async Task<IActionResult> GetAllCoursesForStudent(Guid Id)
         {
-            var courses = _studentRepository.getAllCourses(Id);
+            var courses = _studentRepository.GetAllCourses(Id);
             return Ok(courses);
 
         }
         [HttpGet("/average")]
-        public async Task<IActionResult> getAverageForStudent(Guid Id)
+        public async Task<IActionResult> GetAverageForStudent(Guid Id)
         {
-            var average = _studentRepository.getAverage(Id);
+            var average = _studentRepository.GetAverage(Id);
             return Ok(average);
         }
         [HttpGet("/transript")]
-        public async Task<IActionResult> getTranskript(Guid Id)
+        public async Task<IActionResult> GetTranskript(Guid Id)
         {
-            var transcript = _studentRepository.getTranskripten(Id);
+            var transcript = _studentRepository.GetTranskripten(Id);
             return Ok(transcript);
         }
 

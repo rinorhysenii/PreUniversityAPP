@@ -9,11 +9,11 @@ namespace Application.Interfaces
 {
    public  interface IStudentRepository
     {
-        Task<List<Student>> getAllStudents();
-        Student getStudentbyId(Guid Id);
-        Task<List<Course>> getAllCourses(Guid id);
-        decimal getAverage(Guid id);
-        Task<List<StudentCourse>> getTranskripten(Guid Id);
+        Task<List<Student>> GetAllStudents(); 
+        Student GetStudentbyId(Guid Id);
+        Task<List<Course>> GetAllCourses(Guid id);
+        decimal GetAverage(Guid id);
+        Task<List<StudentCourse>> GetTranskripten(Guid Id);
 
         
     }

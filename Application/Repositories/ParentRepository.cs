@@ -22,13 +22,13 @@ namespace Application.Repositories
             _context = context;
             _studentRepository = studentRepository;
         }
-        public decimal getAvgForMyChild(Guid stId)
+        public decimal GetAvgForMyChild(Guid stId) 
         {
-            decimal avg = _studentRepository.getAverage(stId);
+            decimal avg = _studentRepository.GetAverage(stId);
             return avg;
         }
 
-        public async Task<List<Student>> getMyChildren(Guid parentid)
+        public async Task<List<Student>> GetMyChildren(Guid parentid) 
         {
             var students = await _context.Students.Where(x => x.ParentId == parentid).Include(x=>x.Parent).ToListAsync();
             if (students == null)
@@ -38,9 +38,9 @@ namespace Application.Repositories
             return students;
         }
 
-        public async Task<List<StudentCourse>> getTranskciptForMyChild(Guid studentid)
+        public async Task<List<StudentCourse>> GetTranskciptForMyChild(Guid studentid) 
         {
-            var trascript= await _studentRepository.getTranskripten(studentid);
+            var trascript= await _studentRepository.GetTranskripten(studentid);
             if (trascript == null)
             {
                 throw new RestException(HttpStatusCode.BadRequest, "There are no marks");
