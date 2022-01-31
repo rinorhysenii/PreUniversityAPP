@@ -1,5 +1,6 @@
 ﻿using Application.Helpers.Errors;
 using Application.Interfaces;
+using Application.ViewModels;
 using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Persistence;
@@ -16,9 +17,12 @@ namespace Application.Repositories
     {
         private readonly DataContext context;
 
-        public CourseRepository(DataContext context)
+        private readonly IStudentRepository studentRepository;
+
+        public CourseRepository(DataContext context, IStudentRepository studentRepository)
         {
             this.context = context;
+            this.studentRepository = studentRepository;
         }
 
         public async Task<List<Course>> GetAllCourses()
@@ -87,6 +91,22 @@ namespace Application.Repositories
             context.StudentCourses.Update(studentCourse);
             await context.SaveChangesAsync();
             return studentCourse;
+        }
+
+        public async Task<MarksReportViewModel> GenerateMarksReport(Guid studentId)
+        {
+            var student = studentRepository.GetStudentbyId(studentId);
+            var coursesTranscript = await studentRepository.GetTranskripten(studentId);
+
+            MarksReportViewModel marksReport = new MarksReportViewModel()
+            {
+                StudentName = student.Name,
+                CoursesTranscript = coursesTranscript,
+                Average = studentRepository.GetAverage(studentId),
+                Date = DateTime.Now,
+                Group = await context.StudentGroups.Where(x => x.StudentId == studentId).Include(x => x.Group).FirstOrDefaultAsync()
+            };
+            return marksReport;
         }
     }
 }

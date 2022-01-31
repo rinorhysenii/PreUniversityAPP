@@ -1,4 +1,5 @@
-﻿using Domain.Entities;
+﻿using Application.ViewModels;
+using Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,5 +16,7 @@ namespace Application.Interfaces
         Task<StudentCourse> AddMark(Guid courseId, Guid studentId, int mark);
         Task<StudentCourse> EditMark(Guid courseId, Guid studentId, int mark);
         Task<StudentCourse> DeleteMark(Guid courseId, Guid studentId);
+
+        Task<MarksReportViewModel> GenerateMarksReport(Guid studentId);
     }
 }

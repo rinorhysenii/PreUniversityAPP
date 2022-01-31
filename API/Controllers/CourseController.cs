@@ -42,16 +42,25 @@ namespace API.Controllers
             var result = await courseReporsitory.AddMark(mark.courseId, mark.studentId, mark.mark);
             return Ok(result);
         }
+
         [HttpPut]
         public async Task<IActionResult> EditMark(MarksViewModel mark)
         {
             var result = await courseReporsitory.EditMark(mark.courseId,mark.studentId,mark.mark);
             return Ok(result);
         }
+
         [HttpDelete]
         public async Task<IActionResult> DeleteMark(DeleteMarkViewModel del)
         {
             var result = await courseReporsitory.DeleteMark(del.courseId, del.studentId);
+            return Ok(result);
+        }
+
+        [HttpGet("generateMarksReport/{studentId}")]
+        public async Task<IActionResult> GenerateMarksReport(Guid studentId) 
+        {
+            var result = await courseReporsitory.GenerateMarksReport(studentId);
             return Ok(result);
         }
     }
