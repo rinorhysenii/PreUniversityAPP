@@ -8,4 +8,6 @@ export interface IStudentCourses{
     courseId:string;
     teacherId:string,
     title:string
+    mark:number,
+    isMarked:boolean
 }

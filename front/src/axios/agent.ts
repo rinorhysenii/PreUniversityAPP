@@ -23,7 +23,7 @@ const requests = {
 const Students={
     list: () => requests.get<IStudentat[]>('/Student'),
     details: (studentId: string) => requests.get<IStudentat>(`/Student/${studentId}`),
-    enrollments:(id:string)=>requests.get<ICourse>(`/Student/allcourses/${id}`),
+    enrollments:(id:string)=>requests.get<ICourse[]>(`/Student/allcourses/${id}`),
     average:(id:string)=>requests.get<Number>(`/Student/average/${id}`),
     transcript:(id:string)=>requests.get<IStudentCourses[]>(`/Students/transript/${id}`)
 }
@@ -48,7 +48,7 @@ const Parent={
 }
 const Account={
     login:(userdata:Register)=>requests.post<void>('/Account/login',userdata),
-    Register:(userdata:Register)=>requests.post<void>('Account/Register',userdata),
+    Register:(userdata:Register)=>requests.post<void>('/Account',userdata),
     logout:()=>requests.get<void>('/Account/logout')
 }
 
