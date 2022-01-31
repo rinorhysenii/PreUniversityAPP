@@ -49,16 +49,16 @@ namespace Application.Repositories
 
         public decimal GetAverage(Guid id)
         {
-            int Courses = 0;
+            int courses = 0;
             int sumOfMarks = 0;
             List<StudentCourse> studentCourses = _context.StudentCourses.Where(x => x.StudentId == id).ToList();
-            Courses = studentCourses.Count();
+            courses = studentCourses.Count();
            foreach(var item in studentCourses)
             {
                 sumOfMarks += item.Mark;
                 
             }
-            decimal average = sumOfMarks / Courses;
+            decimal average = sumOfMarks / courses;
 
             return average;
 

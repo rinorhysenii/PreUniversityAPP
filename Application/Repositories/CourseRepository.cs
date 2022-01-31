@@ -46,16 +46,25 @@ namespace Application.Repositories
         }
         public async Task<StudentCourse> AddMark(Guid courseId, Guid studentId, int mark)
         {
-            var studentCourse = new StudentCourse()
-            {
-                Id = Guid.NewGuid(),
-                StudentId = studentId,
-                CourseId = courseId,
-                Mark = mark,
-                IsMarked = true
-            };
+            StudentCourse studentCourse = new StudentCourse();
 
-            var result = await context.StudentCourses.AddAsync(studentCourse);
+            var exists = context.StudentCourses.Select(x => x.CourseId == courseId).FirstOrDefault();
+            if (exists)
+            {
+                studentCourse = await context.StudentCourses.Where(x => x.CourseId == courseId).FirstOrDefaultAsync();
+                studentCourse.Mark = mark;
+                var res = context.Update(studentCourse);
+            }
+            else
+            {
+                studentCourse.Id = Guid.NewGuid();
+                studentCourse.StudentId = studentId;
+                studentCourse.CourseId = courseId;
+                studentCourse.Mark = mark;
+                studentCourse.IsMarked = true;
+                var result = await context.StudentCourses.AddAsync(studentCourse);
+            }
+
             await context.SaveChangesAsync();
 
             return studentCourse;

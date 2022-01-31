@@ -32,10 +32,10 @@ namespace API.Controllers
             return Ok(res);
         }
 
-        [HttpGet("getAvgForMyChild/{id}")]
-        public IActionResult GetAvgForMyChild(Guid id) 
+        [HttpGet("getAvgForMyChild/{studentid}")]
+        public IActionResult GetAvgForMyChild(Guid studentid) 
         {
-            var res = _parentRepository.GetAvgForMyChild(id);
+            var res = _parentRepository.GetAvgForMyChild(studentid);
             return Ok(res);
         }
 
