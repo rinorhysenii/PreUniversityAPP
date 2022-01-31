@@ -1,10 +1,10 @@
 ﻿using Application.Helpers.Errors;
 using Application.Interfaces;
 using Domain.Entities;
+using Microsoft.EntityFrameworkCore;
 using Persistence;
 using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -49,16 +49,16 @@ namespace Application.Repositories
 
         public decimal GetAverage(Guid id)
         {
-            int Courses = 0;
+            int courses = 0;
             int sumOfMarks = 0;
-            List<StudentCourse> studentCourses = _context.StudentCourses.Where(x => x.Id == id && x.IsMarked==true).ToList();
-            Courses = studentCourses.Count();
+            List<StudentCourse> studentCourses = _context.StudentCourses.Where(x => x.StudentId == id).ToList();
+            courses = studentCourses.Count();
            foreach(var item in studentCourses)
             {
                 sumOfMarks += item.Mark;
                 
             }
-            decimal average = sumOfMarks / Courses;
+            decimal average = sumOfMarks / courses;
 
             return average;
 

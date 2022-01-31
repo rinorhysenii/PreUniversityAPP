@@ -1,10 +1,10 @@
 ﻿using Application.Helpers.Errors;
 using Application.Interfaces;
 using Domain.Entities;
+using Microsoft.EntityFrameworkCore;
 using Persistence;
 using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Text;

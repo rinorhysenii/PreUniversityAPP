@@ -17,22 +17,25 @@ namespace API.Controllers
         {
             _parentRepository = parentRepository;
         }
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetMyChilds(Guid prid)
+
+        [HttpGet("getMyChilds/{parentId}")]
+        public async Task<IActionResult> GetMyChilds(Guid parentId)
         {
-            var resault =await _parentRepository.GetMyChildren(prid);
+            var resault =await _parentRepository.GetMyChildren(parentId);
             return Ok(resault);
         }
-        [HttpGet("/transcript/{id}")]
-        public async Task<IActionResult> GetTrascriptForMyChild(Guid id)
+
+        [HttpGet("getTrascriptForMyChild/{studentid}")]
+        public async Task<IActionResult> GetTrascriptForMyChild(Guid studentid)
         {
-           var res= _parentRepository.GetTranskciptForMyChild(id);
+           var res= await _parentRepository.GetTranskciptForMyChild(studentid);
             return Ok(res);
         }
-        [HttpGet("/average/{id}")]
-        public async Task<IActionResult> GetavgForMyChild(Guid id) 
+
+        [HttpGet("getAvgForMyChild/{studentid}")]
+        public IActionResult GetAvgForMyChild(Guid studentid) 
         {
-            var res = _parentRepository.GetAvgForMyChild(id);
+            var res = _parentRepository.GetAvgForMyChild(studentid);
             return Ok(res);
         }
 
