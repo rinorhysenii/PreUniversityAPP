@@ -8,7 +8,7 @@ const Navbar = () => {
       
         <nav class="navbar navbar-expand-lg navbar-light">
              
-  <a class="navbar-brand" id='shkolla' href="#">ShkollaApp</a>
+  <a class="navbar-brand" id='shkolla' href="#"><img src={require('../../Features/Login/logo.png')} alt='s' style={{width:100}}  /></a>
  
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -19,7 +19,7 @@ const Navbar = () => {
     </ul>
     <form class="form-inline my-2 my-lg-0">
       
-    <button class="btn btn-outline-success my-2 my-sm-0" onclick="location.href='loginPage'" type="submit">Exit</button>
+    
     </form>
   </div>
 </nav>
