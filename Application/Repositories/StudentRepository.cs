@@ -1,10 +1,10 @@
 ﻿using Application.Helpers.Errors;
 using Application.Interfaces;
 using Domain.Entities;
+using Microsoft.EntityFrameworkCore;
 using Persistence;
 using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -51,7 +51,7 @@ namespace Application.Repositories
         {
             int Courses = 0;
             int sumOfMarks = 0;
-            List<StudentCourse> studentCourses = _context.StudentCourses.Where(x => x.Id == id && x.IsMarked==true).ToList();
+            List<StudentCourse> studentCourses = _context.StudentCourses.Where(x => x.StudentId == id).ToList();
             Courses = studentCourses.Count();
            foreach(var item in studentCourses)
             {

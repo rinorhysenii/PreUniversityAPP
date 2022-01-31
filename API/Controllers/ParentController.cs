@@ -18,17 +18,17 @@ namespace API.Controllers
             _parentRepository = parentRepository;
         }
 
-        [HttpGet("getMyChilds/{id}")]
-        public async Task<IActionResult> GetMyChilds(Guid prid)
+        [HttpGet("getMyChilds/{parentId}")]
+        public async Task<IActionResult> GetMyChilds(Guid parentId)
         {
-            var resault =await _parentRepository.GetMyChildren(prid);
+            var resault =await _parentRepository.GetMyChildren(parentId);
             return Ok(resault);
         }
 
-        [HttpGet("getTrascriptForMyChild/{id}")]
-        public async Task<IActionResult> GetTrascriptForMyChild(Guid id)
+        [HttpGet("getTrascriptForMyChild/{studentid}")]
+        public async Task<IActionResult> GetTrascriptForMyChild(Guid studentid)
         {
-           var res= await _parentRepository.GetTranskciptForMyChild(id);
+           var res= await _parentRepository.GetTranskciptForMyChild(studentid);
             return Ok(res);
         }
 
